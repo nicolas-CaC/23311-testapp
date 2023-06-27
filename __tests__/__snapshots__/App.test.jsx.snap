@@ -1,0 +1,45 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Test: App.jsx > toMatchSnapshot 1`] = `
+<div>
+  <div>
+    <p
+      data-testid="state"
+    >
+      0
+    </p>
+    <form
+      aria-label="form"
+    >
+      <input
+        placeholder="Valor"
+        type="text"
+        value="0"
+      />
+    </form>
+    <button
+      data-testid="resta"
+    >
+      Restar
+    </button>
+    <button
+      aria-label="reset"
+    >
+      Reset
+    </button>
+    <button
+      data-testid="suma"
+    >
+      Sumar
+    </button>
+    <hr />
+    <img
+      alt="imagen"
+      src="https://picsum.photos/200/300"
+    />
+    <div>
+      Cargando datos...
+    </div>
+  </div>
+</div>
+`;

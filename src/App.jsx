@@ -4,12 +4,8 @@ import { useFetch } from './hooks/useFetch'
 
 const initialValue = 0
 
-export const funcion = () => {
-    // blalbalbal
-    return 6
-}
 
-
+// eslint-disable-next-line react/prop-types
 export const App = ({ funcion }) => {
 
     const [value, setValue] = useState(initialValue)
@@ -30,7 +26,7 @@ export const App = ({ funcion }) => {
 
     return (
         <div>
-            <p>{ value }</p>
+            <p data-testid='state'>{ value }</p>
             <form onSubmit={ onSubmit } aria-label='form'>
                 <input
                     type="text"
@@ -40,9 +36,9 @@ export const App = ({ funcion }) => {
                 />
             </form>
 
-            <button onClick={ restar }>Restar</button>
-            <button onClick={ reset }>Reset</button>
-            <button onClick={ sumar }>Sumar</button>
+            <button data-testid='resta' onClick={ restar }>Restar</button>
+            <button aria-label='reset' onClick={ reset }>Reset</button>
+            <button data-testid='suma' onClick={ sumar }>Sumar</button>
 
             <hr />
             <img src="https://picsum.photos/200/300" alt="imagen" />
