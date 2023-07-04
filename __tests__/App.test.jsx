@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vitest } from "vitest";
 import App from "../src/App";
 
 
@@ -71,7 +71,6 @@ describe('Test: App.jsx', () => {
 
     test('Desestructuracion', () => {
 
-
         render(<App />)
 
         const { src, alt } = screen.getByRole('img')
@@ -79,6 +78,29 @@ describe('Test: App.jsx', () => {
         expect(src).toMatch('https://picsum.photos/200/300')
         expect(alt).toBe('imagen')
     })
+
+    test('Form & Input', () => {
+
+        const funcionMock = vitest.fn()
+
+        render(<App funcion={ funcionMock } />)
+
+        const form = screen.getByRole('form')
+        const input = screen.getByRole('textbox')
+
+        fireEvent.input(input, { target: { value: 4 } })
+        expect(input.value).toBe('4')
+
+        fireEvent.submit(form)
+        expect(input.value).toBe('')
+
+        expect(funcionMock).toHaveBeenCalled()
+        expect(funcionMock).toHaveBeenCalledTimes(1)
+        expect(funcionMock).toHaveBeenCalledWith('4')
+    })
+
+
+
 
 
 
